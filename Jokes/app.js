@@ -9,6 +9,7 @@ btn.addEventListener("click", () => {
 });
 
 const fetchDataJoke = async() => {
+    result.textContent = "Loading...";
     const response = await fetch(url, {
         headers: {
             Accept: "application/json",
