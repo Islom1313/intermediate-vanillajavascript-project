@@ -15,7 +15,27 @@ const fetchProducts = async() => {
 };
 
 const displayProducts = async(list) => {
-    console.log(list);
+    const productList = list
+        .map((product) => {
+            const { id } = product;
+            const { name: title, price } = product.fields;
+            const { url: img } = product.fields.image[0];
+            const formatPrice = price / 10;
+
+            return `<a class="single-product" href="product.html">
+        <img src="${img}" class="single-product-img img" alt="${title}" />
+        <footer>
+            <h5 class="name">${title}</h5>
+            <span class="price">$${formatPrice}</span>
+        </footer>
+    </a>`;
+        })
+        .join("");
+
+    productsDOM.innerHTML = `<div class="products-container">
+        ${productList}
+        </div>
+        `;
 };
 
 const start = async() => {
