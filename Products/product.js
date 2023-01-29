@@ -27,7 +27,14 @@ const displayProduct = (product) => {
     const { url: img } = product.fields.image[0];
     document.title = title.toUpperCase();
 
-    // colors
+    const colorList = colors
+        .map((color) => {
+            return ` <span class="product-color" style="background: ${color}"></span>
+        `;
+        })
+        .join("");
+
+    // colors generating
 
     productsDOM.innerHTML = `<div class="product-wrapper">
     <img src="${img}" class="img" alt="${title}" />
@@ -36,8 +43,7 @@ const displayProduct = (product) => {
         <h5>${company}</h5>
         <span>$${price / 100}</span>
         <div class="colors">
-            <span class="product-color"></span>
-            <span class="product-color" style="background: red"></span>
+        ${colorList}
         </div>
         <p>
             ${description}
