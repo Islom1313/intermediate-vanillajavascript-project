@@ -9,7 +9,7 @@ const getUser = async() => {
     const { phone, email } = person;
     const { large: img } = person.picture;
     const { password } = person.login;
-    const { firstN, lastN } = person;
+    const { first, last } = person.name;
     const {
         dob: { age },
     } = person;
@@ -22,11 +22,9 @@ const getUser = async() => {
         email,
         img,
         password,
-        firstN,
-        lastN,
         dob: `${age}`,
-        street: `${(name, number)}`,
+        street: `${name} ${number}`,
+        name: `${first} ${last}`,
     };
 };
-
 export default getUser;
