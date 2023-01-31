@@ -7,3 +7,4 @@ const title = get(".user-title");
 const value = get(".user-value");
 const btn = get(".btn");
 const btns = [...document.querySelectorAll(".icon")];
+console.log(btns);
