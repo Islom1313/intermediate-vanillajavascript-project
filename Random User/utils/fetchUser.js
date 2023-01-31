@@ -5,7 +5,7 @@ const getUser = async() => {
     const data = await response.json();
     // destructur function
     const person = data.results[0];
-    console.log(person);
+    // console.log(person);
     const { phone, email } = person;
     const { large: img } = person.picture;
     const { password } = person.login;
@@ -22,7 +22,7 @@ const getUser = async() => {
         email,
         img,
         password,
-        dob: `${age}`,
+        age,
         street: `${name} ${number}`,
         name: `${first} ${last}`,
     };
