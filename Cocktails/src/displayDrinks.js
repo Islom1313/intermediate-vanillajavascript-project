@@ -3,6 +3,7 @@ import { hideLoading } from "./toggleLoading.js";
 const displayDrinks = ({ drinks }) => {
     const section = get(".section-center");
     const title = get(".title");
+    // console.log(section);
     if (!drinks) {
         hideLoading();
         title.textContent = "sorry, no drinks matched to your search";
@@ -12,7 +13,7 @@ const displayDrinks = ({ drinks }) => {
 
     const newDrink = drinks
         .map((drink) => {
-            console.log(drink);
+            // console.log(drink);
             const { idDrink: id, strDrink: name, strDrinkThumb: image } = drink;
             return `<a href="./drink.html">
         <article class="cocktail" data-id="${id}">
@@ -25,6 +26,7 @@ const displayDrinks = ({ drinks }) => {
     hideLoading();
     title.textContent = "";
     section.innerHTML = newDrink;
+    return section;
 };
 
 export default displayDrinks;
