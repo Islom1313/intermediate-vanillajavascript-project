@@ -29,7 +29,6 @@ const displaySingleDrink = (data) => {
             return `<li> <i class="far fa-check-square"></i> ${item}</li>`;
         })
         .join("");
-    console.log(drink, list);
 };
 
 export default displaySingleDrink;
