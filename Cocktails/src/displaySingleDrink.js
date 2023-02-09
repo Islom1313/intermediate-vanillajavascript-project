@@ -11,9 +11,8 @@ const displaySingleDrink = (data) => {
         drink.strIngredient2,
         drink.strIngredient3,
         drink.strIngredient4,
-        drink.strIngredient5,
+        drink.strIngredient4,
     ];
-
     const img = get(".drink-img");
     const drinkName = get(".drink-name");
     const description = get(".drink-desc");
