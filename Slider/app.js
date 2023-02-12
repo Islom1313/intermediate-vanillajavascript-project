@@ -45,6 +45,20 @@ const runSlider = (type) => {
   last.classList.remove(["last"]);
   next.classList.remove(["next"]);
 
+  // prev
+  if (type === "prev") {
+    active.classList.add("next");
+    last.classList.add("active");
+    next = last.previousElementSibling;
+    if (!next) {
+      next = container.lastElementChild;
+    }
+    next.classList.remove(["next"]);
+
+    next.classList.add("last");
+    return;
+  }
+
   active.classList.add(["last"]);
   last.classList.add(["next"]);
   next.classList.add(["active"]);
