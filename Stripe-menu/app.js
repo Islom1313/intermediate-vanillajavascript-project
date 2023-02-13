@@ -37,3 +37,16 @@ sidebar.innerHTML = sublinks
   </article>`;
   })
   .join("");
+
+linkBtns.forEach((btn) => {
+  btn.addEventListener("mouseover", function (e) {
+    const text = e.currentTarget.textContent;
+    const measures = e.currentTarget.getBoundingClientRect();
+    const center = (measures.left + measures.right) / 2;
+    const bottom = measures.bottom - 3;
+
+    submenu.classList.add("show");
+    submenu.style.left = `${center}px`;
+    submenu.style.top = `${bottom}px`;
+  });
+});
