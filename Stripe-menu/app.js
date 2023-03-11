@@ -59,6 +59,10 @@ linkBtns.forEach((btn) => {
       if (links.length === 3) {
         column = "col-3";
       }
+
+      if (links.length > 4) {
+        column = "col-4";
+      }
       submenu.innerHTML = `<section>
       <h4>${page}</h4>
       <div class="submenu-center ${column}">
