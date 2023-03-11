@@ -52,9 +52,16 @@ linkBtns.forEach((btn) => {
       submenu.classList.add("show");
       submenu.style.left = `${center}px`;
       submenu.style.top = `${bottom}px`;
+
+      // option
+      let column = "col-2";
+
+      if (links.length === 3) {
+        column = "col-3";
+      }
       submenu.innerHTML = `<section>
       <h4>${page}</h4>
-      <div class="submenu-center col-2">
+      <div class="submenu-center ${column}">
       ${links
         .map((link) => {
           return `<a href="${link.url}"> 
